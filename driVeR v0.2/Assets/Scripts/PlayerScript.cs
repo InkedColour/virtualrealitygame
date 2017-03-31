@@ -10,12 +10,12 @@ public class PlayerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         checkpointNum = 0;
-		checkpointText.text = "Checkpoints: 0";
+		checkpointText.text = "Checkpoints: 0/6";
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		checkpointText.text = "Checkpoints: " + checkpointNum;
+
 	    
 	}
 }
