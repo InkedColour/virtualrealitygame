@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Pause : MonoBehaviour 
@@ -9,7 +10,10 @@ public class Pause : MonoBehaviour
 	{
 		if(Input.GetButtonDown("pauseButton"))
 			paused = togglePause();
-	}
+
+        if(Input.GetButtonDown("resetButton"))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+    }
 
 	void OnGUI()
 	{
