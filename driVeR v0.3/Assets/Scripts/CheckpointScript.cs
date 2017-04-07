@@ -1,34 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CheckpointScript : MonoBehaviour {
 
 	public PlayerScript pScript;
-    public BoxCollider triggerPoint;
-    public float pCheckpointNum;
+	public float pCheckpointNum;
+	public Text checkpointText;
 
-	private bool hasPassed;
+	public bool hasPassed;
 
 	// Use this for initialization
 	void Start () {
-        pScript = FindObjectOfType<PlayerScript>();
-        triggerPoint = gameObject.GetComponent<BoxCollider>();
-        pCheckpointNum = pScript.checkpointNum;
+		pScript = FindObjectOfType<PlayerScript>();
+		pCheckpointNum = pScript.checkpointNum;
 
 		hasPassed = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+		//checkpointText.text = "Checkpoints: 0";
 	}
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player" && hasPassed == false)
-        {
+	// Update is called once per frame
+	void Update () {
+		//checkpointText.text = "Checkpoints: " + pCheckpointNum;
+		pCheckpointNum = pScript.checkpointNum;
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		//Debug.Log ("HIT!");
+		if ((other.gameObject.tag == "Player") && (hasPassed == false))
+		{
+			pScript.checkpointNum++;
 			pCheckpointNum = pCheckpointNum + 1;
+			checkpointText.text = "Checkpoints: " + pCheckpointNum + "/6";
 			hasPassed = true;
-        }
-    }
+		}
+	}
 }
