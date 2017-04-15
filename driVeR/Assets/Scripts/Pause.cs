@@ -8,10 +8,13 @@ public class Pause : MonoBehaviour
     //bool quite = false;
 	void Update()
 	{
-		if(Input.GetButtonDown("pauseButton"))
-			paused = togglePause();
+        if (Input.GetButtonDown("pauseButton"))
+        {
+            paused = togglePause();
+            //SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+        }
 
-        if(Input.GetButtonDown("resetButton"))
+        if (Input.GetButtonDown("resetButton"))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
     }
 
