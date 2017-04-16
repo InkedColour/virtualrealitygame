@@ -15,7 +15,7 @@ public class RadioScript : MonoBehaviour {
     void Start () {
         //music = new AudioClip[10];
 
-        float rand = (Random.Range(0f, 5f));
+        float rand = (Random.Range(0f, 6f));
         x = (int)rand;
         temp = music[x];
 
