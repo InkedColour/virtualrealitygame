@@ -31,7 +31,7 @@ public class CheckpointScript : MonoBehaviour {
 
         pointTimer = pointTimer + Time.deltaTime;
 
-        if (pCheckpointNum== 6)
+        if (pCheckpointNum == 6)
         {
             hasPassed = false;
             //pScript.checkpointNum = 0;
@@ -44,7 +44,7 @@ public class CheckpointScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		//Debug.Log ("HIT!");
-		if ((other.gameObject.tag == "Player") && (hasPassed == false) && pointTimer > 3.0f)
+		if ((other.gameObject.tag == "Player") && (hasPassed == false) && pointTimer > 1.5f)
 		{
             pointTimer = 0.0f;
 			pScript.checkpointNum++;
